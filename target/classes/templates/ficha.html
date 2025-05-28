@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ficha Técnica</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 40px;
+        }
+        .ficha {
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+            width: 500px;
+            margin: auto;
+            transition: background-color 0.5s ease-in-out;
+        }
+        h1 { color: #333; text-align: center; }
+        p { font-size: 16px; margin: 8px 0; }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto 0 auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="ficha" id="ficha">
+    <h1 th:text="'Ficha Técnica del Equipo: ' + ${equipo.nombre}"></h1>
+    <p><strong>Categoría:</strong> <span th:text="${equipo.categoria.nombreCategoria}"></span></p>
+    <p><strong>Marca:</strong> <span th:text="${equipo.marca.nombreMarca}"></span></p>
+    <p><strong>Modelo:</strong> <span th:text="${equipo.modelo}"></span></p>
+    <p><strong>Descripción:</strong> <span th:text="${equipo.descripcion}"></span></p>
+    <p><strong>Stock:</strong> <span th:text="${equipo.stock}"></span></p>
+    <img th:src="@{'/imagen/' + ${equipo.idEquipo}}" alt="Imagen del equipo"/>
+</div>
+
+<script>
+    // Lista de colores pastel
+    const colores = ['#fce4ec', '#e1f5fe', '#f3e5f5', '#e8f5e9', '#fff3e0', '#e0f2f1', '#fbe9e7'];
+    const colorAleatorio = colores[Math.floor(Math.random() * colores.length)];
+    document.getElementById("ficha").style.backgroundColor = colorAleatorio;
+</script>
+</body>
+</html>

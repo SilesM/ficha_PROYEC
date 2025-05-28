@@ -1,0 +1,6 @@
+com\proyecto\fichaqrr\FichaqrrApplication.class
+com\proyecto\fichaqrr\model\Marca.class
+com\proyecto\fichaqrr\model\Categoria.class
+com\proyecto\fichaqrr\model\Equipo.class
+com\proyecto\fichaqrr\controller\EquipoController.class
+com\proyecto\fichaqrr\repository\EquipoRepository.class
